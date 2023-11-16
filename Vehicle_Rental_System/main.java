@@ -316,7 +316,7 @@ class Borrower {
 						System.out.println("Enter today date: ");
 						String date=main.sc.nextLine();
 						ArrayList<String> dup=new ArrayList<>(checkoutcart);
-						main.rental.put(main.rental.size()+1,new Rental(main.rental.size()+1,email,dup,date,false,""));
+						main.rental.put(main.rental.size()+1,new Rental(main.rental.size()+1,main.borrower.get(email).borrowername,dup,date,false,""));
 						
 						main.borrowervehicles.add(new Borrower(main.rental.size()+1,dup,date));
 						checkoutcart.clear();
@@ -617,7 +617,7 @@ class Rental {
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>RENTAL VEHICLE LIST <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 		for(int ren:main.rental.keySet()) {
 			System.out.println("RENTAL ID: "+ren+"                                                                                  RENTAL DATE: "+main.rental.get(ren).renteddate);
-			System.out.println("Borrower name: "+main.rental.get(ren).Borrowername+"                                                        RETURN DATE:"+main.rental.get(ren).returndate);
+			System.out.println("Borrower name: "+main.rental.get(ren).Borrowername+"                                                            RETURN DATE:"+main.rental.get(ren).returndate);
 			System.out.println("-------------------------------------------------------------------------------------------------------------------------");
 			System.out.printf("|%5s %20s %21s %15s %28s %20s   |","S.NO","VEHICLE NO:","VEHICLE NAME","TYPE","AVAILABLE QUANTITY","RENTAL PRICE");
 			System.out.println();
